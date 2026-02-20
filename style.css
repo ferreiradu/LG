@@ -99,7 +99,7 @@ nav a:hover {
 
     text-align: center;
     
-    min-height: 95vh; /* ocupa quase a tela toda */
+    min-height: 70vh; /* ocupa quase a tela toda */
 }
 
 .hero-content {
@@ -582,5 +582,6 @@ footer {
     font-size: 13px;
     color: #94a3b8;
 }
+
 
 
