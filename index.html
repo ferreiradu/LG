@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LG Montagens | Montagem Profissional</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="media.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -45,16 +47,30 @@
 </section>
 
 <section id="sobre" class="section">
-    <div class="container sobre">
-        <img src="img/lgperfil.jpg" alt="Foto LG Montagens">
-        <div>
+    <div class="container sobre-moderno">
+
+        <div class="carrossel">
+            <div class="carrossel-track">
+                <img src="img/lgperfil.jpg" alt="Montagem 1">
+                <img src="img/lgfotos (1).jpg" alt="Montagem 2">
+                <img src="img/lgfotos (2).jpg" alt="Montagem 3">
+                <img src="img/lgfotos (3).jpg" alt="Montagem 4">
+            </div>
+        </div>
+
+        <div class="sobre-texto">
             <h2>Quem Somos</h2>
             <p>
-                A LG Montagens é referência em montagem profissional,
-                oferecendo atendimento ágil, garantia no serviço e total
-                compromisso com a satisfação do cliente.
+                Somos Lucas e Gabi, profissionais à frente da LG Montagens, especializados em montagem de móveis com qualidade, organização e atenção aos detalhes.
+
+Trabalhamos com responsabilidade, pontualidade e compromisso em cada serviço realizado. Nosso objetivo é garantir que cada cliente receba um atendimento ágil, seguro e com acabamento impecável.
+
+
             </p>
+           
         </div>
+
+        
     </div>
 </section>
 
@@ -85,6 +101,24 @@
     <div class="container center">
         <h2>Produtos</h2>
         <p>Confira nossa linha completa de produtos profissionais.</p>
+
+        <div class="produtos-grid">
+            <div class="produto-item">
+                <img src="img/lgprodutos (1).jpg" alt="Ferramentas para Montagem">
+                <h3>Ferramentas</h3>
+            </div>
+
+            <div class="produto-item">
+                <img src="img/lgprodutos (2).jpg" alt="Acessórios para Montador">
+                <h3>Acessórios</h3>
+            </div>
+
+            <div class="produto-item">
+                <img src="img/lgprodutos (3).jpg" alt="Equipamentos Profissionais">
+                <h3>Equipamentos</h3>
+            </div>
+        </div>
+
         <a href="produtos.html" class="btn-outline">Ver Produtos</a>
     </div>
 </section>
@@ -93,6 +127,11 @@
     <div class="container center">
         <h2>Curso Montador</h2>
         <p>Aprenda técnicas profissionais com nosso curso exclusivo.</p>
+
+        <div class="curso-capa">
+            <img src="img/lgcurso.jpg" alt="Curso Profissional de Montador">
+        </div>
+
         <a href="cursos.html" class="btn">Ver Curso</a>
     </div>
 </section>
@@ -119,8 +158,62 @@
     </div>
 </section>
 
-<footer>
-    © 2026 LG Montagens - Todos os direitos reservados
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Coluna 1 - Marca -->
+        <div class="footer-col">
+            <h2 class="footer-logo">LG Montagens</h2>
+            <p>
+                Especialistas em montagens de móveis corporativos, residenciais 
+                e soluções técnicas com qualidade, segurança e compromisso.
+            </p>
+        </div>
+
+        <!-- Coluna 2 - Links -->
+        <div class="footer-col">
+            <h3>Links Rápidos</h3>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Quem Somos</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3 - Serviços -->
+        <div class="footer-col">
+            <h3>Serviços</h3>
+            <ul>
+                <li>Montagem de Móveis</li>
+                <li>Montagem Corporativa</li>
+                <li>Reparos em Móveis</li>
+                <li>Manutenção Técnica</li>
+               
+            </ul>
+        </div>
+
+        <!-- Coluna 4 - Contato -->
+        <div class="footer-col">
+            <h3>Contato</h3>
+            <p>📍 Maringá - PR</p>
+            <p>📞 (44) 99999-9999</p>
+            <p>✉️ lgmontagens@gmail.com</p>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © 2026 LG Montagens - Todos os direitos reservados.
+        </p>
+    </div>
 </footer>
 
 <a href="https://wa.me/5599999999999" class="whatsapp-float" target="_blank">
