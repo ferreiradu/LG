@@ -248,7 +248,7 @@ nav a:hover {
 .carrossel-track {
     display: flex;
     width: calc(300px * 8);
-    animation: slide 60s linear infinite;
+    animation: slide 40s linear infinite;
 }
 
 .carrossel-track img {
@@ -582,6 +582,7 @@ footer {
     font-size: 13px;
     color: #94a3b8;
 }
+
 
 
 
