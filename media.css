@@ -155,7 +155,7 @@ nav {
     /* ================= CARROSSEL MOBILE ================= */
 
 .carrossel {
-    width: 90%;
+    width: 100%;
     
 }
 
@@ -309,5 +309,6 @@ nav {
         text-align: left;
     }
 }
+
 
 
