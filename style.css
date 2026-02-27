@@ -61,11 +61,53 @@ header {
 }
 
 .logo {
-    font-weight: 900;
-    color: black;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 1px lightslategray;
-    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+
+    background: linear-gradient(
+        90deg,
+        #023e66,
+        #0f52af,
+        #2563eb
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* brilho passando infinito */
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+
+    animation: brilhoLogo 4s linear infinite;
+}
+
+@keyframes brilhoLogo {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
 }
 
 
@@ -235,8 +277,6 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* ================= CARROSSEL ================= */
-
 .carrossel {
     flex: 1;
     min-width: 300px;
@@ -247,21 +287,32 @@ nav a:hover {
 
 .carrossel-track {
     display: flex;
-    width: calc(300px * 8);
-    animation: slide 40s linear infinite;
+    width: calc(300px * 4); /* 8 imagens (4 + 4 repetidas) */
+    animation: slide 20s linear infinite;
 }
 
 .carrossel-track img {
     width: 300px;
     height: 400px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
-/* Animação automática */
+/* LOOP PERFEITO */
 @keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-1200px); }
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-634px); /* 4 imagens */
+    }
 }
+
+.carrossel:hover .carrossel-track {
+    animation-play-state: paused;
+}
+
+
 
 .video iframe {
     width: 90%;
