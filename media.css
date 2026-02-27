@@ -88,32 +88,106 @@
         flex-direction: column;
     }
 
-    .carrossel {
-        width: 90%;
-        border-radius: 20px;
-    }
-    
-    .carrossel-track {
-        display: flex;
-        width: 400%; /* 4 imagens */
-        animation: slideMobile 260s linear infinite;
-    }
-    
-    .carrossel-track img {
+    /* ================= MENU PREMIUM ================= */
+
+nav {
+    transition: all 0.4s ease;
+}
+
+/* MENU MOBILE / DROPDOWN */
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
         width: 100%;
-        height: 320px; /* você pode ajustar */
-        object-fit: cover;
-        object-position: center;
-        
+
+        backdrop-filter: blur(15px);
+        background: rgba(255,255,255,0.85);
+
+        flex-direction: column;
+        text-align: center;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: all 0.4s ease;
     }
+
+    nav.active {
+        max-height: 400px;
+    }
+}
+
+/* ================= HAMBURGUER ================= */
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #111;
+    margin: 4px 0;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+/* ANIMAÇÃO VIRAR X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px,6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px,-7px);
+}
+
+   
+    /* ================= CARROSSEL MOBILE ================= */
+
+.carrossel {
+    width: 90%;
+    
+}
+
+
+
+.carrossel-track {
+    display: flex;
+    width: 500%;
+    animation: slideMobile 15s linear infinite;
+}
+
+.carrossel-track img {
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+}
     
     /* Animação adaptada para mobile */
     @keyframes slideMobile {
-        0%   { transform: translateX(0%); }
-        25%  { transform: translateX(-100%); }
-        50%  { transform: translateX(-200%); }
-        75%  { transform: translateX(-300%); }
-        100% { transform: translateX(0%); }
+        0% { transform: translateX(0); }
+        20% { transform: translateX(0); }
+    
+        25% { transform: translateX(-100vw); }
+        45% { transform: translateX(-100vw); }
+    
+        50% { transform: translateX(-200vw); }
+        70% { transform: translateX(-200vw); }
+    
+        75% { transform: translateX(-300vw); }
+        95% { transform: translateX(-300vw); }
+    
+        100% { transform: translateX(0); }
     }
 
     
@@ -146,6 +220,93 @@
         border-radius: 40px;
         box-shadow: 0 25px 60px rgba(0,0,0,0.15);
         transition: 0.5s ease;
+    }
+
+    /* ===== CORREÇÃO GRID MOBILE ===== */
+.produto-item:nth-child(2),
+.produto-item:nth-child(3) {
+    margin-top: 0;
+}
+
+.produtos-grid {
+    gap: 30px;
+    margin: 40px 0;
+}
+
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 769px) and (max-width: 1023px) {
+
+    /* HERO */
+    .hero {
+        min-height: 60vh;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    /* SOBRE */
+    .sobre-moderno {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .sobre-texto {
+        max-width: 700px;
+    }
+
+    /* CARROSSEL */
+    .carrossel {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .carrossel-track img {
+        width: 260px;
+        height: 350px;
+    }
+
+    /* SERVIÇOS */
+    .cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    /* PRODUTOS */
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .produto-item:nth-child(2),
+    .produto-item:nth-child(3) {
+        margin-top: 0;
+    }
+
+    /* CURSO */
+    .curso-capa img {
+        height: 320px;
+        max-width: 700px;
+    }
+
+    /* VIDEO */
+    .video iframe {
+        height: 350px;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
     }
 }
 
