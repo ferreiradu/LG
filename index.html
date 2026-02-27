@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LG Montagens | Montagem Profissional</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="media.css">
+<link rel="stylesheet" href="style.css?v=1.0.1">
+<link rel="stylesheet" href="media.css?v=1.0.1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
@@ -51,10 +51,10 @@
 
         <div class="carrossel">
             <div class="carrossel-track">
-                <img src="img/lgperfil.jpg" alt="Montagem 1">
-                <img src="img/lgfotos (1).jpg" alt="Montagem 2">
-                <img src="img/lgfotos (2).jpg" alt="Montagem 3">
-                <img src="img/lgfotos (3).jpg" alt="Montagem 4">
+                <img src="img/lgperfil.jpg" alt="Montagem 0">
+                <img src="img/lgfotos1.jpg" alt="Montagem 1">
+                <img src="img/lgfotos2.jpg" alt="Montagem 2">
+                <img src="img/lgfotos3.jpg" alt="Montagem 3">
             </div>
         </div>
 
@@ -129,7 +129,7 @@ Trabalhamos com responsabilidade, pontualidade e compromisso em cada serviço re
         <p>Aprenda técnicas profissionais com nosso curso exclusivo.</p>
 
         <div class="curso-capa">
-            <img src="img/lgcurso.jpg" alt="Curso Profissional de Montador">
+            <img src="img/Screenshot_20260220_163738_Instagram.jpg" alt="Curso Profissional de Montador">
         </div>
 
         <a href="cursos.html" class="btn">Ver Curso</a>
@@ -224,11 +224,49 @@ Trabalhamos com responsabilidade, pontualidade e compromisso em cada serviço re
     const toggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu");
     
-    toggle.addEventListener("click", () => {
+    /* CLICK MOBILE */
+    toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         menu.classList.toggle("active");
+        toggle.classList.toggle("active");
+    });
+    
+    /* HOVER DESKTOP */
+    toggle.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 768) {
+            menu.classList.add("active");
+            toggle.classList.add("active");
+        }
+    });
+    
+    menu.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 768) {
+            menu.classList.add("active");
+            toggle.classList.add("active");
+        }
+    });
+    
+    /* FECHAR AO SAIR */
+    menu.addEventListener("mouseleave", () => {
+        menu.classList.remove("active");
+        toggle.classList.remove("active");
+    });
+    
+    /* CLICK FORA */
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.remove("active");
+            toggle.classList.remove("active");
+        }
+    });
+    
+    /* SCROLL */
+    window.addEventListener("scroll", () => {
+        menu.classList.remove("active");
+        toggle.classList.remove("active");
     });
     </script>
-    
+   
 
 </body>
 </html>
